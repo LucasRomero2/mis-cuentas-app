@@ -50,7 +50,11 @@
 
 <script setup>
 import EssentialLink from "components/EssentialLink.vue";
+import useAuth from "src/composables/UseAuth";
+import { useQuasar } from "quasar";
 import { ref } from "vue";
+const { logout } = useAuth();
+const $q = useQuasar();
 
 const essentialLinks = [
   {
@@ -99,14 +103,14 @@ const leftDrawerOpen = ref(false);
 const miniState = ref(true);
 
 const handleLogout = async () => {
-  /* $q.dialog({
+  $q.dialog({
     title: "Cerrar sesión",
     message: "Esta seguro que quiere cerrar la sesión?",
     cancel: true,
     ok: "Si, cerrar sesión",
-  }).onOk(async () => {
-    router.replace({ name: "login" });
-  }); */
+  }).onOk(() => {
+    logout();
+  });
 };
 const toggleLeftDrawer = () => {
   leftDrawerOpen.value = !leftDrawerOpen.value;
