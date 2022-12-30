@@ -1,9 +1,9 @@
 <template>
-  <q-page padding>
-    <q-form
-      class="row q-mt-xl items-center justify-center full-height full-width"
-      @submit.prevent="onSubmit"
-    >
+  <q-page
+    class="row q-pb-xl items-center justify-center full-height full-width"
+    padding
+  >
+    <q-form @submit.prevent="onSubmit">
       <p class="col-12 text-h5 text-center">Iniciar sesión</p>
       <div class="col-md-4 col-sm-6 col-xs-10 q-mt-sm">
         <q-input

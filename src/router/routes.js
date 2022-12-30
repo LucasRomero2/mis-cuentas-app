@@ -24,6 +24,9 @@ const routes = [
         component: () => import("pages/ForgotPassword.vue"),
       },
     ],
+    meta: {
+      authModule: true,
+    },
   },
   {
     path: "/",

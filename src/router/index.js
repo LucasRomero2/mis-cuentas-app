@@ -39,6 +39,9 @@ export default route(function (/* { store, ssrContext } */) {
     if (auth && !(await app.getCurrentUser())) {
       return { name: "login" };
     }
+    if (to.meta.authModule && (await app.getCurrentUser())) {
+      return { name: "home" };
+    }
   });
 
   return Router;
